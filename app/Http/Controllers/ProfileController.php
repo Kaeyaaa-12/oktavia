@@ -6,6 +6,7 @@ use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB; // 1. Impor DB Facade
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -26,14 +27,19 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $user->fill($request->validated());
+
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
         }
 
-        $request->user()->save();
+        $user->save();
 
+        // 2. Menggunakan nama rute yang lebih spesifik jika berada di area admin
+        // Jika rute ini memiliki name('admin.profile.edit'), gunakan ini.
+        // Jika tidak, 'profile.edit' sudah benar.
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
@@ -48,12 +54,15 @@ class ProfileController extends Controller
 
         $user = $request->user();
 
-        Auth::logout();
+        // 3. Menggunakan Database Transaction
+        DB::transaction(function () use ($user, $request) {
+            Auth::logout();
 
-        $user->delete();
+            $user->delete();
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+        });
 
         return Redirect::to('/');
     }
