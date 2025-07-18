@@ -2,34 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
-    /**
-     * Menampilkan semua berita di Halaman Admin
-     */
     public function index()
     {
-        // Ini sekarang akan berfungsi tanpa error
-        $posts = Post::latest()->get(); 
-        
-        // Nanti akan diarahkan ke view halaman admin
-        return view('admin.posts.index', compact('posts')); 
+        $posts = Post::latest()->paginate(10);
+        return view('admin.posts.index', compact('posts'));
     }
 
-    /**
-     * Menampilkan form untuk membuat berita baru
-     */
     public function create()
     {
         return view('admin.posts.create');
     }
 
-    /**
-     * Menyimpan berita baru ke database
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -38,13 +27,8 @@ class PostController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $path = null;
-        if ($request->hasFile('image')) {
-            // 'image' disesuaikan dengan nama input di form
-            $path = $request->file('image')->store('posts', 'public');
-        }
+        $path = $request->hasFile('image') ? $request->file('image')->store('posts', 'public') : null;
 
-        // Ini juga sekarang akan berfungsi tanpa error
         Post::create([
             'title' => $request->title,
             'content' => $request->content,
@@ -53,5 +37,49 @@ class PostController extends Controller
         ]);
 
         return redirect()->route('admin.posts.index')->with('success', 'Berita berhasil ditambahkan.');
+    }
+
+    public function show(Post $post)
+    {
+        return view('admin.posts.show', compact('post'));
+    }
+
+    public function edit(Post $post)
+    {
+        return view('admin.posts.edit', compact('post'));
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $path = $post->image;
+        if ($request->hasFile('image')) {
+            if ($path) {
+                Storage::disk('public')->delete($path);
+            }
+            $path = $request->file('image')->store('posts', 'public');
+        }
+
+        $post->update([
+            'title' => $request->title,
+            'content' => $request->content,
+            'image' => $path,
+        ]);
+
+        return redirect()->route('admin.posts.index')->with('success', 'Berita berhasil diperbarui.');
+    }
+
+    public function destroy(Post $post)
+    {
+        if ($post->image) {
+            Storage::disk('public')->delete($post->image);
+        }
+        $post->delete();
+        return redirect()->route('admin.posts.index')->with('success', 'Berita berhasil dihapus.');
     }
 }

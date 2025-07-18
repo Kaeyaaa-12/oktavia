@@ -4,7 +4,7 @@
         <h1 class="text-xl font-bold tracking-wider">ADMIN</h1>
     </div>
     <nav class="flex-1 px-4 py-6 space-y-2">
-        {{-- Link Dashboard dengan logika class dinamis --}}
+        {{-- Link Dashboard --}}
         <a href="{{ route('admin.dashboard') }}"
             class="flex items-center px-4 py-2.5 text-sm rounded-lg transition duration-200
                   {{ request()->routeIs('admin.dashboard') ? 'font-bold bg-yellow-400 text-gray-900' : 'font-medium text-gray-300 hover:bg-gray-800' }}">
@@ -12,14 +12,22 @@
             Dashboard
         </a>
 
-        {{-- Link Berita dengan logika class dinamis --}}
-        <a href="{{ route('admin.berita') }}"
-            class="flex items-center px-4 py-2.5 text-sm rounded-lg transition duration-200
-                  {{ request()->routeIs('admin.berita') ? 'font-bold bg-yellow-400 text-gray-900' : 'font-medium text-gray-300 hover:bg-gray-800' }}">
-            <span class="material-symbols-outlined mr-3">article</span>
-            Berita & Informasi
-        </a>
+        {{-- Link Berita & Informasi --}}
+        <a href="{{ route('admin.posts.index') }}"
+    class="flex items-center px-4 py-2.5 text-sm rounded-lg transition duration-200
+          {{ request()->routeIs('admin.posts.*') ? 'font-bold bg-yellow-400 text-gray-900' : 'font-medium text-gray-300 hover:bg-gray-800' }}">
+    <span class="material-symbols-outlined mr-3">article</span>
+    Berita & Informasi
+</a>
+        {{-- Link Galeri --}}
+        <a href="{{ route('admin.galleries.index') }}"
+    class="flex items-center px-4 py-2.5 text-sm rounded-lg transition duration-200
+            {{ request()->routeIs('admin.galleries.*') ? 'font-bold bg-yellow-400 text-gray-900' : 'font-medium text-gray-300 hover:bg-gray-800' }}">
+    <span class="material-symbols-outlined mr-3">photo_library</span>
+    Galeri
+</a>
 
+        {{-- Link Pengaturan --}}
         <a href="#"
             class="flex items-center px-4 py-2.5 text-sm font-medium text-gray-300 hover:bg-gray-800 rounded-lg transition duration-200">
             <span class="material-symbols-outlined mr-3">settings</span>

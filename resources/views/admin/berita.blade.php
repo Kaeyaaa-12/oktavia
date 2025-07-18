@@ -50,10 +50,10 @@
                     <h2 class="text-3xl font-bold text-white">Manajemen Berita & Informasi</h2>
                     <p class="text-gray-400 mt-1">Kelola semua artikel berita dan pengumuman di sini.</p>
                 </div>
-                <button class="bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded-lg flex items-center">
-                    <span class="material-symbols-outlined mr-2">add</span>
-                    Tambah Berita
-                </button>
+                <a href="{{ route('admin.posts.create') }}" class="bg-yellow-400 text-gray-900 font-bold py-2 px-4 rounded-lg flex items-center hover:bg-yellow-300 transition-colors">
+    <span class="material-symbols-outlined mr-2">add</span>
+    Tambah Berita
+</a>
             </div>
 
             {{-- News Table --}}
@@ -70,21 +70,42 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="border-b border-gray-700 hover:bg-gray-700/50">
-                                <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">Operasi
-                                    Zebra 2025 Dimulai Hari Ini</th>
-                                <td class="px-6 py-4">Lalu Lintas</td>
-                                <td class="px-6 py-4">13 Juli 2025</td>
-                                <td class="px-6 py-4"><span
-                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-900 text-green-300">Published</span>
-                                </td>
-                                <td class="px-6 py-4 space-x-4">
-                                    <a href="#" class="font-medium text-yellow-400 hover:underline">Edit</a>
-                                    <a href="#" class="font-medium text-red-500 hover:underline">Hapus</a>
-                                </td>
-                            </tr>
+                            @forelse ($posts as $post)
+                                <tr class="border-b border-gray-700 hover:bg-gray-700/50">
+                                    <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap">
+                                        {{ $post->title }}
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        {{-- Ganti dengan kategori jika ada, contoh: --}}
+                                        Lalu Lintas 
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        {{ $post->published_at->format('d F Y') }}
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-900 text-green-300">
+                                            Published
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4 space-x-4">
+                                        <a href="#" class="font-medium text-yellow-400 hover:underline">Edit</a>
+                                        <a href="#" class="font-medium text-red-500 hover:underline">Hapus</a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr class="border-b border-gray-700">
+                                    <td colspan="5" class="px-6 py-4 text-center text-gray-400">
+                                        Tidak ada berita yang ditemukan.
+                                    </td>
+                                </tr>
+                            @endforelse
                         </tbody>
                     </table>
+                     @if(isset($posts) && $posts->hasPages())
+                        <div class="mt-4">
+                            {{ $posts->links() }}
+                        </div>
+                    @endif
                 </div>
             </div>
         </main>

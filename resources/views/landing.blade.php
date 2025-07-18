@@ -256,113 +256,60 @@
         </section>
 
         <section id="berita" class="py-20 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-4" data-aos="fade-up">
-                    <h2 class="text-3xl font-bold text-gray-800 uppercase tracking-wider">Berita</h2>
-                    <div class="w-20 h-1 bg-yellow-400 mx-auto mt-2"></div>
-                </div>
-                <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="lg:col-span-2" data-aos="fade-right">
-                        <div class="relative rounded-lg overflow-hidden shadow-lg">
-                            <img src="https://placehold.co/800x500/000000/FFFFFF" alt="Berita Utama"
-                                class="w-full h-full object-cover">
-                            <div
-                                class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent w-full">
-                                <span class="text-white text-sm bg-blue-600 px-2 py-1 rounded">July 7, 2025</span>
-                                <h3 class="text-white text-2xl font-bold mt-2">Kapolres Pimpin Upacara Hari Bhayangkara
-                                    ke-79 "Polri untuk Masyarakat"</h3>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <div class="border-b border-gray-300">
-                                <nav class="-mb-px flex space-x-6">
-                                    <a href="#"
-                                        class="text-yellow-500 border-b-2 border-yellow-500 whitespace-nowrap py-2 px-1 font-bold">Latest</a>
-                                    <a href="#"
-                                        class="text-gray-500 hover:text-yellow-500 border-b-2 border-transparent hover:border-yellow-500 whitespace-nowrap py-2 px-1 font-medium">Popular</a>
-                                    <a href="#"
-                                        class="text-gray-500 hover:text-yellow-500 border-b-2 border-transparent hover:border-yellow-500 whitespace-nowrap py-2 px-1 font-medium">Comments</a>
-                                </nav>
-                            </div>
-                            <div class="mt-6 space-y-6">
-                                <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
-                                    <img src="https://placehold.co/150x100" alt="thumbnail"
-                                        class="w-36 h-24 object-cover rounded-lg">
-                                    <div>
-                                        <span class="text-xs text-gray-500">May 23, 2025</span>
-                                        <h4 class="font-semibold text-gray-800 hover:text-yellow-600 leading-tight">
-                                            Manfaatkan Liburan Sekolah, Polwan Beri Edukasi Tertib Lalu Lintas</h4>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                                    <img src="https://placehold.co/150x100/EFEFEF/333333" alt="thumbnail"
-                                        class="w-36 h-24 object-cover rounded-lg">
-                                    <div>
-                                        <span class="text-xs text-gray-500">May 23, 2025</span>
-                                        <h4 class="font-semibold text-gray-800 hover:text-yellow-600 leading-tight">
-                                            Polres Respon Cepat Ungkap Kasus Pelaku Penganiayaan</h4>
-                                    </div>
-                                </div>
-                                <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="300">
-                                    <img src="https://placehold.co/150x100/333333/FFFFFF" alt="thumbnail"
-                                        class="w-36 h-24 object-cover rounded-lg">
-                                    <div>
-                                        <span class="text-xs text-gray-500">May 22, 2025</span>
-                                        <h4 class="font-semibold text-gray-800 hover:text-yellow-600 leading-tight">
-                                            Patroli Skala Besar Jaga Kondusifitas Wilayah di Malam Hari</h4>
-                                    </div>
-                                </div>
-                            </div>
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-4" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-gray-800 uppercase tracking-wider">Berita</h2>
+            <div class="w-20 h-1 bg-yellow-400 mx-auto mt-2"></div>
+        </div>
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2" data-aos="fade-right">
+                {{-- Berita Utama (Featured Post) --}}
+                @if($latestPost)
+                    <div class="relative rounded-lg overflow-hidden shadow-lg">
+                        <img src="{{ asset('storage/' . $latestPost->image) }}" alt="{{ $latestPost->title }}" class="w-full h-full object-cover" style="height: 500px;">
+                        <div class="absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent w-full">
+                            <span class="text-white text-sm bg-blue-600 px-2 py-1 rounded">{{ $latestPost->published_at->format('d F Y') }}</span>
+                            <h3 class="text-white text-2xl font-bold mt-2">{{ $latestPost->title }}</h3>
                         </div>
                     </div>
-                    <div class="space-y-8" data-aos="fade-left">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="relative rounded-lg overflow-hidden h-40" data-aos="fade-up"
-                                data-aos-delay="100">
-                                <img src="https://placehold.co/300x200/555555/FFFFFF"
-                                    class="w-full h-full object-cover" alt="berita kecil">
-                                <div class="absolute bottom-0 p-2 bg-gradient-to-t from-black to-transparent w-full">
-                                    <h5 class="text-white text-sm font-bold leading-tight">Edukasi Tertib Lalu Lintas
-                                        Anak Usia Dini</h5>
-                                </div>
-                            </div>
-                            <div class="relative rounded-lg overflow-hidden h-40" data-aos="fade-up"
-                                data-aos-delay="200">
-                                <img src="https://placehold.co/300x200/666666/FFFFFF"
-                                    class="w-full h-full object-cover" alt="berita kecil">
-                                <div class="absolute bottom-0 p-2 bg-gradient-to-t from-black to-transparent w-full">
-                                    <h5 class="text-white text-sm font-bold leading-tight">Respon Cepat Menjelang
-                                        Maulid</h5>
-                                </div>
-                            </div>
-                            <div class="relative rounded-lg overflow-hidden h-40" data-aos="fade-up"
-                                data-aos-delay="300">
-                                <img src="https://placehold.co/300x200/777777/FFFFFF"
-                                    class="w-full h-full object-cover" alt="berita kecil">
-                                <div class="absolute bottom-0 p-2 bg-gradient-to-t from-black to-transparent w-full">
-                                    <h5 class="text-white text-sm font-bold leading-tight">Kunjungi Terminal, Ajak Jaga
-                                        Kamtibmas</h5>
-                                </div>
-                            </div>
-                            <div class="relative rounded-lg overflow-hidden h-40" data-aos="fade-up"
-                                data-aos-delay="400">
-                                <img src="https://placehold.co/300x200/888888/FFFFFF"
-                                    class="w-full h-full object-cover" alt="berita kecil">
-                                <div class="absolute bottom-0 p-2 bg-gradient-to-t from-black to-transparent w-full">
-                                    <h5 class="text-white text-sm font-bold leading-tight">Pimpin Upacara Kenaikan
-                                        Pangkat</h5>
-                                </div>
+                @else
+                    <div class="relative rounded-lg overflow-hidden shadow-lg bg-gray-300 flex items-center justify-center" style="height: 500px;">
+                        <p class="text-gray-500">Belum ada berita untuk ditampilkan.</p>
+                    </div>
+                @endif
+                
+                <div class="mt-8">
+                    <div class="border-b border-gray-300">
+                        <nav class="-mb-px flex space-x-6">
+                            <a href="#" class="text-yellow-500 border-b-2 border-yellow-500 whitespace-nowrap py-2 px-1 font-bold">Terbaru</a>
+                        </nav>
+                    </div>
+                    <div class="mt-6 space-y-6">
+                        {{-- Daftar Berita Terbaru --}}
+                        @forelse($recentPosts as $post)
+                        <div class="flex items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+                            <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="w-36 h-24 object-cover rounded-lg">
+                            <div>
+                                <span class="text-xs text-gray-500">{{ $post->published_at->format('d F Y') }}</span>
+                                <h4 class="font-semibold text-gray-800 hover:text-yellow-600 leading-tight">{{ $post->title }}</h4>
                             </div>
                         </div>
-                        <div data-aos="zoom-in">
-                            <img src="https://placehold.co/600x400/28A745/FFFFFF?text=SPONSOR"
-                                class="rounded-lg shadow-lg w-full h-auto" alt="Iklan">
-                        </div>
+                        @empty
+                            <p class="text-gray-500">Tidak ada berita lainnya.</p>
+                        @endforelse
                     </div>
                 </div>
             </div>
-        </section>
 
+            <div class="space-y-8" data-aos="fade-left">
+                {{-- Kolom Samping (jika ingin diisi berita populer nanti) --}}
+                <div data-aos="zoom-in">
+                    <img src="https://placehold.co/600x400/28A745/FFFFFF?text=SPONSOR" class="rounded-lg shadow-lg w-full h-auto" alt="Iklan">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         <section id="galeri" class="py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12" data-aos="fade-up">
@@ -370,46 +317,19 @@
                     <div class="w-20 h-1 bg-yellow-400 mx-auto mt-2"></div>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="0">
-                        <img src="https://placehold.co/600x400/222/FFF?text=Foto+1" alt="Galeri Foto 1"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://placehold.co/600x400/333/FFF?text=Foto+2" alt="Galeri Foto 2"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://placehold.co/600x400/444/FFF?text=Foto+3" alt="Galeri Foto 3"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="300">
-                        <img src="https://placehold.co/600x400/555/FFF?text=Foto+4" alt="Galeri Foto 4"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="0">
-                        <img src="https://placehold.co/600x400/666/FFF?text=Foto+5" alt="Galeri Foto 5"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="100">
-                        <img src="https://placehold.co/600x400/777/FFF?text=Foto+6" alt="Galeri Foto 6"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="200">
-                        <img src="https://placehold.co/600x400/888/FFF?text=Foto+7" alt="Galeri Foto 7"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
-                    <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-                        data-aos="zoom-in" data-aos-delay="300">
-                        <img src="https://placehold.co/600x400/999/FFF?text=Foto+8" alt="Galeri Foto 8"
-                            class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300">
-                    </div>
+                    @forelse ($galleries as $gallery)
+                        <div class="overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                            data-aos="zoom-in">
+                            <a href="{{ asset('storage/' . $gallery->image_path) }}" data-fancybox="gallery" data-caption="{{ $gallery->title }}">
+                                <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->title }}"
+                                    class="w-full h-48 object-cover transform hover:scale-110 transition-transform duration-300">
+                            </a>
+                        </div>
+                    @empty
+                        <p class="col-span-full text-center text-gray-500">
+                            Belum ada gambar di galeri.
+                        </p>
+                    @endforelse
                 </div>
             </div>
         </section>

@@ -176,7 +176,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/BAGOPS.png') }}" alt="Logo BAGOPS"
+                            <img src="{{ asset('assets/images/BAGOPS.jpg') }}" alt="Logo BAGOPS"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">BAG OPS</h3>
@@ -189,7 +189,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/BAGSDM.png') }}" alt="Logo BAGSDM"
+                            <img src="{{ asset('assets/images/BAGSDM.jpg') }}" alt="Logo BAGSDM"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">BAG SDM</h3>
@@ -202,7 +202,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-satlantas.png') }}" alt="Logo Satlantas"
+                            <img src="{{ asset('assets/images/BAGREN.png') }}" alt="Logo BAGREN"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">BAG REN</h3>
@@ -214,7 +214,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-satintelkam.png') }}" alt="Logo Satintelkam"
+                            <img src="{{ asset('assets/images/SATINTELKAM.png') }}" alt="Logo SATINTELKAM"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SAT INTELKAM</h3>
@@ -226,7 +226,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-samapta.png') }}" alt="Logo Samapta"
+                            <img src="{{ asset('assets/images/SATRESKRIM.png') }}" alt="Logo SATRESKRIM"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SAT RESKRIM</h3>
@@ -238,7 +238,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-satnarkoba.png') }}" alt="Logo Satnarkoba"
+                            <img src="{{ asset('assets/images/SATNARKOBA.png') }}" alt="Logo SATNARKOBA"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SAT NARKOBA</h3>
@@ -250,7 +250,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-propam.png') }}" alt="Logo Propam"
+                            <img src="{{ asset('assets/images/SATLANTAS.png') }}" alt="Logo SATLANTAS"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SAT LANTAS</h3>
@@ -262,7 +262,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-humas.png') }}" alt="Logo Humas"
+                            <img src="{{ asset('assets/images/SATSAMAPTA.png') }}" alt="Logo SATSAMAPTA"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SAT SAMAPTA</h3>
@@ -274,7 +274,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-samapta.png') }}" alt="Logo Samapta"
+                            <img src="{{ asset('assets/images/SATBINMAS.png') }}" alt="Logo SATBINMAS"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SAT BINMAS</h3>
@@ -286,7 +286,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-satnarkoba.png') }}" alt="Logo Satnarkoba"
+                            <img src="{{ asset('assets/images/SATTAHTI.png') }}" alt="Logo SATTAHTI"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SAT TAHTI</h3>
@@ -298,7 +298,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-propam.png') }}" alt="Logo Propam"
+                            <img src="{{ asset('assets/images/SIWAS.png') }}" alt="Logo SIWAS"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SI WAS</h3>
@@ -310,7 +310,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-humas.png') }}" alt="Logo Humas"
+                            <img src="{{ asset('assets/images/SIPROPAM.png') }}" alt="Logo SIPROPAM"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SI PROPAM</h3>
@@ -322,7 +322,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-samapta.png') }}" alt="Logo Samapta"
+                            <img src="{{ asset('assets/images/SIHUMAS.png') }}" alt="Logo SIHUMAS"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SI HUMAS</h3>
@@ -334,7 +334,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-satnarkoba.png') }}" alt="Logo Satnarkoba"
+                            <img src="{{ asset('assets/images/SIKUM.png') }}" alt="Logo SIKUM"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SI KUM</h3>
@@ -345,7 +345,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-propam.png') }}" alt="Logo Propam"
+                            <img src="{{ asset('assets/images/SITIK.png') }}" alt="Logo SITIK"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SI TIK</h3>
@@ -357,7 +357,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-humas.png') }}" alt="Logo Humas"
+                            <img src="{{ asset('assets/images/SIUM.png') }}" alt="Logo SIUM"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SIUM</h3>
@@ -369,7 +369,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-satnarkoba.png') }}" alt="Logo Satnarkoba"
+                            <img src="{{ asset('assets/images/SIKEU.png') }}" alt="Logo SIKEU"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SI KEU</h3>
@@ -381,7 +381,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-propam.png') }}" alt="Logo Propam"
+                            <img src="{{ asset('assets/images/SIDOKKES.png') }}" alt="Logo Propam"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SI DOKKES</h3>
@@ -393,7 +393,7 @@
                     <div
                         class="bg-white rounded-lg shadow-lg p-6 text-center flex flex-col items-center hover:shadow-xl transition-shadow duration-300">
                         <div class="mb-4">
-                            <img src="{{ asset('assets/images/logo-humas.png') }}" alt="Logo Humas"
+                            <img src="{{ asset('assets/images/SPKT.jpg') }}" alt="Logo SPKT"
                                 class="h-41 w-41 object-contain">
                         </div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">SPKT</h3>
